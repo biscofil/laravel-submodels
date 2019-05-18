@@ -17,7 +17,7 @@
     "model"
   ],
   "require": {
-    "illuminate/support": "~5"
+    "laravel/framework": "5.7.*",
   },
   "autoload": {
     "psr-4": {
