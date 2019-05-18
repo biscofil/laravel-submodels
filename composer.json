@@ -1,7 +1,7 @@
 {
   "name": "biscofil/laravel-submodels",
   "description": "Create Laravel submodels",
-  "license": "license",
+  "license": "mit",
   "authors": [
     {
       "name": "Filippo Bisconcin",
