@@ -83,9 +83,9 @@ license. Please see the [license file](license) for more information.
 [ico-travis]: https://img.shields.io/travis/biscofil/laravelsubmodels/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/biscofil/laravelsubmodels
-[link-downloads]: https://packagist.org/packages/biscofil/laravelsubmodels
-[link-travis]: https://travis-ci.org/biscofil/laravelsubmodels
+[link-packagist]: https://packagist.org/packages/biscofil/laravel-submodels
+[link-downloads]: https://packagist.org/packages/biscofil/laravel-submodels
+[link-travis]: https://travis-ci.org/biscofil/laravel-submodels
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/biscofil
 [link-contributors]: ../../contributors
