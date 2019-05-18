@@ -76,7 +76,7 @@ class AdminUser extends User{
 
 ## License
 
-license. Please see the [license file](license.md) for more information.
+license. Please see the [license file](license) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/biscofil/laravelsubmodels.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/biscofil/laravelsubmodels.svg?style=flat-square
