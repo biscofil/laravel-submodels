@@ -16,7 +16,25 @@ composer require biscofil/laravel-submodels
 ## Usage
 
 ``` php
+>>> User::find(1)
+=> App\AdminUser {#3182
+     id: 1,
+     first_name: "something",
+     last_name: "something"
+     is_admin: false,
+     admin_parameter: "something"
 
+>>> User::find(2)
+=> App\User {#3164
+     id: 2,
+     first_name: "something",
+     last_name: "something",
+     is_admin: true
+```      
+    
+In order to accomplish this result, each Model that has to be extended must implement `getSubModelClass` that returns the right class depeding on conditions.
+    
+``` php
 class User extends Authenticatable{
 
     use SuperModel;
@@ -54,7 +72,11 @@ class User extends Authenticatable{
     }
 
 }
-
+```      
+    
+On the other side, each sub model can implement `getAppendedFillable` that returns the list of fillable parameters. This list will be merged with the list of the parent class.
+    
+``` php
 class AdminUser extends User{
 
     use SubModel;
