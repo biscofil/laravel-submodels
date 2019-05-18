@@ -1,0 +1,27 @@
+{
+  "name": "Biscofil/laravelsubmodels",
+  "description": "Create Laravel submodels",
+  "license": "license",
+  "authors": [
+    {
+      "name": "Filippo Bisconcin",
+      "email": "filippo.bisconcin@gmail.com",
+      "homepage": "biscofil.it"
+    }
+  ],
+  "homepage": "https://github.com/biscofil/laravelsubmodels",
+  "keywords": [
+    "Laravel",
+    "LaravelSubmodels",
+    "trait",
+    "model"
+  ],
+  "require": {
+    "illuminate/support": "~5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Biscofil\\LaravelSubmodels\\": "src/"
+    }
+  }
+}
