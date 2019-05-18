@@ -27,7 +27,7 @@ class User extends Authenticatable{
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name'
+        'first_name', 'last_name', 'is_admin'
     ];
 
     /**
@@ -43,6 +43,15 @@ class User extends Authenticatable{
        }
        return $class;
    }
+   
+   /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeAdmins($query)
+    {
+        return $query->where('is_admin', '=', true);
+    }
 
 }
 
