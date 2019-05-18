@@ -11,7 +11,7 @@ Create submodels in Laravel
 Via Composer
 
 ``` bash
-$ composer require biscofil/laravelsubmodels
+composer require biscofil/laravel-submodels
 ```
 
 ## Usage
@@ -76,7 +76,7 @@ class AdminUser extends User{
 
 ## License
 
-license. Please see the [license file](license.md) for more information.
+license. Please see the [license file](license) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/biscofil/laravelsubmodels.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/biscofil/laravelsubmodels.svg?style=flat-square
