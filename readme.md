@@ -11,7 +11,7 @@ Create submodels in Laravel
 Via Composer
 
 ``` bash
-$ composer require biscofil/laravelsubmodels
+composer require biscofil/laravel-submodels
 ```
 
 ## Usage
