@@ -3,9 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Create submodels in Laravel
 
 ## Installation
 
@@ -17,23 +16,59 @@ $ composer require biscofil/laravelsubmodels
 
 ## Usage
 
-## Change log
+``` php
+<?php
 
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+class User extends Authenticatable{
 
-## Testing
+    use SuperModel;
 
-``` bash
-$ composer test
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'first_name', 'last_name'
+    ];
+
+    /**
+    * @param $model
+    * @return string|null
+    */
+   public function getSubModelClass($model){
+       $class = null;
+       if ($model->isAdmin()) {
+           $class = AdminUser::class;
+       } elseif ($model->isCustomer()) {
+           $class = CustomerUser::class;
+       }
+       return $class;
+   }
+
+}
+
+class AdminUser extends User{
+
+    use SubModel;
+
+    public function newQuery()
+    {
+        return $this->scopeAdmins(parent::newQuery());
+    }
+
+    /**
+     * @return array
+     */
+    public function getAppendedFillable()
+    {
+        return [
+            'admin_parameter'
+        ];
+    }
+}
+
 ```
-
-## Contributing
-
-Please see [contributing.md](contributing.md) for details and a todolist.
-
-## Security
-
-If you discover any security related issues, please email filippo.bisconcin@gmail.com instead of using the issue tracker.
 
 ## Credits
 
