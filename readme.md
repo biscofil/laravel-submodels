@@ -17,7 +17,6 @@ $ composer require biscofil/laravelsubmodels
 ## Usage
 
 ``` php
-<?php
 
 class User extends Authenticatable{
 
