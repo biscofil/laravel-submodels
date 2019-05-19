@@ -12,7 +12,8 @@
   "homepage": "https://github.com/biscofil/laravelsubmodels",
   "keywords": [
     "Laravel",
-    "LaravelSubmodels",
+    "hierarchy",
+    "sub-models",
     "trait",
     "model"
   ],
