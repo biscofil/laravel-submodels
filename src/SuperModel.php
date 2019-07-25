@@ -39,5 +39,15 @@ trait SuperModel
      */
     public abstract function getSubModelClass($model);
 
+    /**
+     * @param array $attributes
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|null
+     */
+    public static function create(array $attributes = [])
+    {
+        $model = static::query()->create($attributes);
+        return $model->fresh();
+    }
+
 
 }
