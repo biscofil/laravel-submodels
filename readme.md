@@ -3,6 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+UPGRADE TO V2: https://github.com/biscofil/laravel-submodels
+
 Create submodels in Laravel
 
 ## Installation
