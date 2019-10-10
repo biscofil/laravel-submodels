@@ -2,7 +2,10 @@
 
 namespace Biscofil\LaravelSubmodels;
 
-trait SuperModel
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+
+trait HasSubModels
 {
 
     /**
@@ -15,6 +18,7 @@ trait SuperModel
     public function newFromBuilder($attributes = [], $connection = null)
     {
 
+        /** @var Model $model */
         $model = $this->newInstance([], true);
 
         $model->setRawAttributes((array)$attributes, true);
@@ -41,7 +45,7 @@ trait SuperModel
 
     /**
      * @param array $attributes
-     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|null
+     * @return Builder|Model|null
      */
     public static function create(array $attributes = [])
     {

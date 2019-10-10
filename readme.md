@@ -37,7 +37,7 @@ In order to accomplish this result, each Model that has to be extended must impl
 ``` php
 class User extends Authenticatable{
 
-    use SuperModel;
+    use HasSubModels;
 
     /**
      * The attributes that are mass assignable.
@@ -74,27 +74,22 @@ class User extends Authenticatable{
 }
 ```
 
-On the other side, each sub model can implement `getAppendedFillable` that returns the list of fillable parameters. This list will be merged with the list of the parent class.
+On the other side, each sub model can add the `appendedFillable` PRIVATE property that contains the list of fillable parameters. This list will be merged with the list of the parent class.
 
 ``` php
 class AdminUser extends User{
 
-    use SubModel;
+    use HasAppendedFields;
+
+    private $appendedFillable = [
+         'admin_parameter'
+    ];
 
     public function newQuery()
     {
         return $this->scopeAdmins(parent::newQuery());
     }
 
-    /**
-     * @return array
-     */
-    public function getAppendedFillable()
-    {
-        return [
-            'admin_parameter'
-        ];
-    }
 }
 
 ```
