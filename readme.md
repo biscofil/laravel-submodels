@@ -106,7 +106,7 @@ license. Please see the [license file](license) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/biscofil/laravel-submodels.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/biscofil/laravel-submodels.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/biscofil/laravel-submodels/master.svg?style=flat-square
+[ico-travis]: https://api.travis-ci.org/biscofil/laravel-submodels.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
 [link-packagist]: https://packagist.org/packages/biscofil/laravel-submodels
