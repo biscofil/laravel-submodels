@@ -87,7 +87,7 @@ class AdminUser extends User{
 
     private $appendedFillable = [
         'admin_parameter',
-        'is_a_cool_admin
+        'is_a_cool_admin'
     ];
 
     private $appendedCasts = [
