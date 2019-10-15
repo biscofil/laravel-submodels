@@ -103,5 +103,22 @@ class DemoTest extends TestCase
 
     }
 
+    public function testImplicitCreateAdmin()
+    {
+
+        /** @var BaseUser $user */
+        $user = factory(BaseUser::class)->create([
+            'is_admin' => true
+        ]);
+
+        /** @var BaseUser $userFetched */
+        $userFetched = BaseUser::find($user->id);
+
+        $this->assertEquals(get_class($userFetched), AdminUser::class);
+
+        $this->assertTrue($userFetched->isAdmin());
+
+    }
+
 
 }

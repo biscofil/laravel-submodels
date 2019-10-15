@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property bool is_admin
+ * @property mixed id
  */
 class BaseUser extends Model
 {
