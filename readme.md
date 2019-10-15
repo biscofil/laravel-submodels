@@ -3,6 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Travis][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
+[![Coverage Status](https://coveralls.io/repos/github/biscofil/laravel-submodels/badge.svg)](https://coveralls.io/github/biscofil/laravel-submodels?branch=v2)
 
 Create submodels in Laravel
 
