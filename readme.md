@@ -34,7 +34,7 @@ composer require biscofil/laravel-submodels
      is_admin: false
 ```
 
-In order to accomplish this result, each Model that has to be extended must implement `getSubModelClass` that returns the right class depeding on conditions.
+In order to accomplish this result, each Model that has to be extended must implement `getSubModelClass` that returns the right class depending on conditions.
 
 ``` php
 class User extends Authenticatable{
@@ -76,7 +76,9 @@ class User extends Authenticatable{
 }
 ```
 
-On the other side, each sub model can add the `appendedFillable` PRIVATE property that contains the list of fillable parameters. This list will be merged with the list of the parent class.
+On the other side, each sub model can add the `appendedFillable` PRIVATE property that contains the list of fillable parameters. 
+This list will be merged with the list of the parent class. 
+The same happens for the `appendedCasts` array. 
 
 ``` php
 class AdminUser extends User{
@@ -84,7 +86,12 @@ class AdminUser extends User{
     use HasAppendedFields;
 
     private $appendedFillable = [
-         'admin_parameter'
+        'admin_parameter',
+        'is_a_cool_admin
+    ];
+
+    private $appendedCasts = [
+         'is_a_cool_admin' => 'bool'
     ];
 
     public function newQuery()
