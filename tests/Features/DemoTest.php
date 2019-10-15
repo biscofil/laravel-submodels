@@ -1,6 +1,12 @@
 <?php
 
-namespace Biscofil\LaravelSubmodels\Test;
+namespace Biscofil\LaravelSubmodels\Tests\Features;
+
+use Biscofil\LaravelSubmodels\Tests\Models\AdminUser;
+use Biscofil\LaravelSubmodels\Tests\Models\BaseUser;
+use Biscofil\LaravelSubmodels\Tests\Models\CustomerUser;
+use Biscofil\LaravelSubmodels\Tests\Models\NestedCustomerUser;
+use Biscofil\LaravelSubmodels\Tests\TestCase;
 
 class DemoTest extends TestCase
 {
@@ -55,4 +61,47 @@ class DemoTest extends TestCase
 
         $this->assertEqualsCanonicalizing($expected, $actual);
     }
+
+    public function testCreateAdmin()
+    {
+
+        /** @var AdminUser $admin */
+        $admin = factory(AdminUser::class)->create();
+
+        $adminFetched = BaseUser::find($admin->id);
+
+        $this->assertEquals(get_class($adminFetched), AdminUser::class);
+
+    }
+
+    public function testCreateCustomer()
+    {
+
+        /** @var CustomerUser $admin */
+        $customer = factory(CustomerUser::class)->create();
+
+        /** @var NestedCustomerUser $customerFetched */
+        $customerFetched = BaseUser::find($customer->id);
+
+        $this->assertEquals(get_class($customerFetched), CustomerUser::class);
+
+        $this->assertFalse($customerFetched->isNestedCustomer());
+    }
+
+    public function testCreateNestedCustomer()
+    {
+
+        /** @var CustomerUser $admin */
+        $customer = factory(NestedCustomerUser::class)->create();
+
+        /** @var NestedCustomerUser $customerFetched */
+        $customerFetched = BaseUser::find($customer->id);
+
+        $this->assertEquals(get_class($customerFetched), NestedCustomerUser::class);
+
+        $this->assertTrue($customerFetched->isNestedCustomer());
+
+    }
+
+
 }

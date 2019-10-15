@@ -29,7 +29,11 @@ trait HasSubModels
         }
 
         if (!is_null($class)) {
-            $model = with(new $class)->newFromBuilder($attributes);
+
+            if ($class != get_class($this)) {
+                $model = with(new $class)->newFromBuilder($attributes);
+            }
+
         } else {
             $model->setConnection($connection ?: $this->getConnectionName());
             $model->fireModelEvent('retrieved', false);

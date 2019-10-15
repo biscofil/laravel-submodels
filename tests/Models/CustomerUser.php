@@ -1,11 +1,12 @@
 <?php
 
-namespace Biscofil\LaravelSubmodels\Test;
+namespace Biscofil\LaravelSubmodels\Tests\Models;
 
-use Biscofil\LaravelSubmodels\HasSubModels;
 use Biscofil\LaravelSubmodels\HasAppendedFields;
+use Biscofil\LaravelSubmodels\HasSubModels;
 
 /**
+ * @property mixed customer_name
  * @property bool is_nested_customer
  */
 class CustomerUser extends BaseUser
@@ -14,9 +15,15 @@ class CustomerUser extends BaseUser
     use HasAppendedFields;
     use HasSubModels;
 
+    protected $table = 'users';
+
     private $appendedFillable = [
         'customer_name',
         'is_nested_customer'
+    ];
+
+    private $appendedCasts = [
+        'is_nested_customer' => 'bool'
     ];
 
     public function isNestedCustomer()

@@ -1,7 +1,6 @@
 <?php
 
-namespace Biscofil\LaravelSubmodels\Test;
-
+namespace Biscofil\LaravelSubmodels\Tests\Models;
 
 use Biscofil\LaravelSubmodels\HasSubModels;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +11,10 @@ use Illuminate\Database\Eloquent\Model;
 class BaseUser extends Model
 {
     use HasSubModels;
+
+    public $timestamps = false;
+
+    protected $table = 'users';
 
     protected $fillable = [
         'is_admin'
@@ -40,13 +43,4 @@ class BaseUser extends Model
         return $this->is_admin;
     }
 
-    public function operation(){
-        return "base";
-    }
-
-
-    public function getData()
-    {
-        return array_merge(['base'], []);
-    }
 }
